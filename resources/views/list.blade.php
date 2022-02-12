@@ -32,8 +32,8 @@
             <h1 class="home-title mt-3">TO DO LIST</h1>
             <h5 class="home-title mb-3">Choose or create a new to do list</h5>
 
-        <div class="card p-3 bg-dark">
-            <div class="card w-50">
+        <div class="card p-3">
+            <div class="card w-50 ">
                 <div class="card-body">
                   <h5 class="card-title">Todo List Title</h5>
                   <p class="card-text">To do list Complete Description with everything you need to know.</p>

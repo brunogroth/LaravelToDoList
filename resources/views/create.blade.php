@@ -45,26 +45,32 @@
 
                 </div>
                 <div class="col-12 col-md-6 mb-3">
-                    <label for="title">Title </label>
+                    <label for="title" class="form-label">Title </label>
                     <input type="text" id="title" name="title" class="form-control" placeholder="Ex: Supermarket List" required>
                 </div>
-                <div class="col-12 col-md-6 mb-4">
+                <div class="col-12 col-md-6 mb-3">
                     <label for="description" class="form-label">Description</label>
                     <textarea name="descripttion" class="form-control lh-lg" placeholder="Ex: List of all the things that i need to buy at the market this month." aria-label="With textarea"></textarea>
                 </div>
-                <div class="col-12 col-md-6">
-                </form>
-                <div class="mt-3 text-end">
-                    <a href="/" class="btn btn-danger" type="button">Cancel</a>
-                    <a href="#" class="btn btn-primary" type="button">Create</a>
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="color" class="form-label">Color </label>
+                    <select id="color" name="color" class="form-control" required>
+                        <option value="white" class="text-secondary" selected>White</option>
+                        <option value="blue" class="text-info">Blue</option>
+                        <option value="red" class="text-danger">Red</option>
+                        <option value="yellow" class="text-warning">Yellow</option>
+                        <option value="dark" class="text-dark">Dark</option>
+                    </select>
                 </div>
-
-            </div>
-
- 
+                </form>
+                <div class="col-12 col-md-6">
+                    <div class="mt-4 text-end">
+                        <a href="/" class="btn btn-danger" type="button">Cancel</a>
+                        <a href="#" class="btn btn-primary" type="button">Create</a>
+                    </div>
+                </div>
+            </div> 
         </div>
-
-
     </div>
 </body>
 </html>
