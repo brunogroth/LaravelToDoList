@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\TodoList;
 
 class TodoListController extends Controller
 {
@@ -12,8 +13,10 @@ class TodoListController extends Controller
 
     public function store(Request $request){
 
-        return $request;
+        $var = TodoList::insert($request->except('_token'));
     
+        return 'success!';
+
     }
 
 
