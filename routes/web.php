@@ -14,10 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('list');
+    return view('principal');
 });
 
-Route::get('create', function(){
-    return view('create');
-});
+Route::get('create', [App\Http\Controllers\TodoListController::class, 'create'])->name('todo.create');
 
+Route::post('store', [App\Http\Controllers\TodoListController::class, 'store'])->name('todo.store');
