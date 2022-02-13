@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('principal');
-});
+Route::get('/', [App\Http\Controllers\TodoListController::class, 'index'])->name('todo.show');
 
 Route::get('create', [App\Http\Controllers\TodoListController::class, 'create'])->name('todo.create');
 
 Route::post('store', [App\Http\Controllers\TodoListController::class, 'store'])->name('todo.store');
+
+//            ^ a view show não existe, mas o que então eu coloco aqui?

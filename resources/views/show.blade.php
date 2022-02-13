@@ -30,39 +30,25 @@
             </nav>
             <div class="container">
             <h1 class="home-title mt-3">TO DO LIST</h1>
-            <h5 class="home-title mb-3">Choose or create a new to do list</h5>
-
-        <div class="card p-3">
-            <div class="card w-50 ">
-                <div class="card-body">
-                  <h5 class="card-title">Todo List Title</h5>
-                  <p class="card-text">To do list Complete Description with everything you need to know.</p>
-                    <div class="text-end">
-                        <button class="btn btn-primary px-3" type="button">See List</button>
-                    </div>
-                </div>
-              </div>
-
-{{-- aqui ta com erro 
-
-              @foreach ($lists as $list)   
-              <div class="card p-3">
-                  <div class="card w-50">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$list->title}}</h5>
-                        <p class="card-text">{{$list->description}}</p>
-                        <div class="text-end">
-                            <button class="btn btn-primary px-3" type="button">See List</button>
+            <h5 class="home-title mb-3">All your lists are here:</h5>
+            <div class="row col-12">
+                <div class="card p-3">
+                    @foreach ($lists as $list)   
+                        <div class="card col-12 col-md-6 mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$list->title}}</h5>
+                            <p class="card-text">{{$list->description}}</p>
+                            <div class="text-end">
+                                <button class="btn btn-primary px-3" type="button">See List</button>
+                            </div>
                         </div>
                     </div>
-              </div>
-              @endforeach
-  
---}}
-            <div class="mt-3 text-end">
-                <a href="/create" class="btn btn-primary" type="button">Create a new To Do List</a>
+                    @endforeach
+                    <div class="mt-3 text-end">
+                        <a href="/create" class="btn btn-primary" type="button">Create a new To Do List</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    </body>
+</body>
 </html>
