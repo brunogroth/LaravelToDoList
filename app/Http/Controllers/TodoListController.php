@@ -16,8 +16,7 @@ class TodoListController extends Controller
 
         $var = TodoList::insert($request->except('_token'));
     
-        return view('/');
-
+        return TodoListController::index();
     }
 
     public function index(){
@@ -32,7 +31,7 @@ class TodoListController extends Controller
     //     echo   '<br>';
     // }
     
-    return view('/show', compact('lists')); 
+    return view('show', compact('lists')); 
     //return view('atacado.stock', compact('revenda', 'veiculos', 'filtros', 'marcas', 'filters', 'metaTags'));
     }
 
