@@ -32,6 +32,14 @@
             <h1 class="home-title mt-3">TO DO LIST</h1>
             <h5 class="home-title mb-3">All your lists are here:</h5>
             <div class="row col-12">
+            @if($errors->any())
+                <h4>{{$errors->first()}}</h4>
+            @endif
+            @if (\Session::has('success'))
+                <div class="alert alert-success">
+                    {!! \Session::get('success') !!}
+                </div>
+            @endif
                 <div class="card p-3">
                     @foreach ($lists as $list)   
                         <div class="card col-12 col-md-6 mb-3">
@@ -40,6 +48,11 @@
                             <p class="card-text">{{$list->description}}</p>
                             <div class="text-end">
                                 <button class="btn btn-primary px-3" type="button">See List</button>
+                                    <form style="display:inline" action="{{route('todo.delete')}}" method="POST">
+                                            @csrf
+                                        <input type="hidden" name="id" value="{{$list->id}}">
+                                        <button class="btn btn-danger px-1 py-1" type="submit"><img src="{{URL('/images/trash.png')}}" height="24"></button>
+                                    </form>
                             </div>
                         </div>
                     </div>

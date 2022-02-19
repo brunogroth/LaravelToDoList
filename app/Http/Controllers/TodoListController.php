@@ -16,23 +16,19 @@ class TodoListController extends Controller
 
         $var = TodoList::insert($request->except('_token'));
     
-        return TodoListController::index();
+        return redirect()->route('todo.show')->with('success', 'To do List sucessfully <strong>created!</strong>'); ;
     }
 
-    public function index(){
-        
+    public function index(){        
         $lists = DB::table('lists')->get();
 
-    //     dando foreach no array funciona, mas não consigo exibir na view foreach ($lists as $value) {
-        
-    //     echo   'ID: '. $value->id . '<br>';
-    //     echo   'Title: '. $value->title . '<br>';
-    //     echo   'Description: ' . $value->description . '<br>';
-    //     echo   '<br>';
-    // }
-    
-    return view('show', compact('lists')); 
-    //return view('atacado.stock', compact('revenda', 'veiculos', 'filtros', 'marcas', 'filters', 'metaTags'));
+    return view('show', compact('lists'));
+}
+
+    public function delete(Request $request){
+        $deleted = DB::table('lists')->where('id', '=', $request->id)->delete();
+
+        return redirect()->back()->with('success', 'To do List sucessfully <strong> deleted!</strong>');  
     }
 
 }
