@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('lists', function (Blueprint $table) {
             $table->id();
             $table->string('title', 255);
-            $table->string('desciption', 255)->nullable();
+            $table->string('description', 255)->nullable();
             $table->string('color', 50);
             $table->timestamps();
         });
