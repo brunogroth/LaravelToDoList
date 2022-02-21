@@ -51,6 +51,7 @@
                 <div class="col-12 col-md-6 mb-3">
                     <label for="description" class="form-label">Description</label>
                     <textarea name="description" class="form-control lh-lg" placeholder="Ex: List of all the things that i need to buy at the market this month." aria-label="With textarea"></textarea>
+                    <input type="submit" hidden />
                 </div>
                 <div class="col-12 col-md-6 mb-3">
                     <label for="color" class="form-label">Color </label>

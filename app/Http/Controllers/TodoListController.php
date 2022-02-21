@@ -16,13 +16,13 @@ class TodoListController extends Controller
 
         $var = TodoList::insert($request->except('_token'));
     
-        return redirect()->route('todo.show')->with('success', 'To do List sucessfully <strong>created!</strong>'); ;
+        return redirect()->route('todo.principal')->with('success', 'To do List sucessfully <strong>created!</strong>'); ;
     }
 
     public function index(){        
         $lists = DB::table('lists')->get();
 
-    return view('show', compact('lists'));
+    return view('principal', compact('lists'));
 }
 
     public function delete(Request $request){
@@ -31,5 +31,10 @@ class TodoListController extends Controller
         return redirect()->back()->with('success', 'To do List sucessfully <strong> deleted!</strong>');  
     }
 
+    public function show(Request $request){   
+        $lists = DB::table('lists')->where('id', '=', $request->id)->get();     
+        $item = DB::table('item')->where('todo_list_id', '=', $request->id)->get();
+    
+    return view('show', compact('lists', 'item'));
 }
-
+}
