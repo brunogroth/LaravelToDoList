@@ -16,7 +16,7 @@ class TodoListController extends Controller
 
         $var = TodoList::insert($request->except('_token'));
     
-        return redirect()->route('todo.principal')->with('success', 'To do List sucessfully <strong>created!</strong>'); ;
+        return redirect()->route('todo.principal')->with('success', 'To do List sucessfully <strong>created!</strong>');
     }
 
     public function index(){        

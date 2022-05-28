@@ -40,41 +40,41 @@
             <h1 class="home-title mt-3">TO DO LIST</h1>
             <h5 class="home-title mb-3">Check your list:</h5>
             <div class="row col-12">
+                @if($errors->any())
+                        <h4>{{$errors->first()}}</h4>
+                    @endif
+                    @if (\Session::has('success'))
+                        <div class="alert alert-success">
+                            {!! \Session::get('success') !!}
+                        </div>
+                    @endif    
                 <div class="card p-3">
-                    
-                    @foreach ($lists as $list)
                         <h5 class="card-title">{{ $list->title }}</h5>
                         <p class="card-text">{{ $list->description }}</p>
-                    @endforeach
                     @foreach ($item as $value)
-                    <div class="form-check">
+                    <form class="form-check">
                         <input class="form-check-input" type="checkbox" id="itemtodo" @if ($value->checked === 1) checked @endif>
                         <label class="form-check-label" for="itemtodo"> {{ $value->todo_item }}</label>
-                    </div>
+                    </form>
                     @endforeach
-                    <form class="form-group">
-
-                            <label class="form-check-label" for="newitem"><input type="text" class="" placeholder="Insert a to do item here." required></label>
-                            <button type="submit" class="btn btn-primary mb-2">Criar item</button>
-
-                      </form>
-                    {{-- <div class="form-check">
-                        <input class="" type="checkbox" id="newitem">
-                        <label for="newitem"><input type="text" required placeholder="Insert a to do item here."></label>
-                    </div> --}}
-                    
-
+                    <form class="form-inline" action="{{route('item.store')}}" method="POST">
+                        @csrf
+                        <div class="form-group my-2">
+                            <input type="hidden" name="todo_list_id" value="{{$list->id}}"/>
+                            <input type="hidden" name="checked" value="0"/>
+                            <input type="text" name="todo_item" class="pt-2" placeholder="Insert a to do item here." required>
+                            <button type="submit" class="btn btn-primary mb-2">Create item</button>
+                        </div>
+                    </form>
                     <div class="mt-3 text-end">
-                        <div class="form-group">
-                            @foreach ($lists as $list)
-                            <form action="{{ route('todo.delete') }}" method="POST" class="display-inline">
+                        <div class="form-inline list-inline ">
+                            <form action="{{ route('item.delete') }}" method="POST" class="list-inline-item mx-0">
                                 @csrf
                                 <input type="hidden" name="id" value="{{ $list->id }}">
-                                <button class="btn btn-danger px-1 py-1" type="submit"><img src="{{ URL('/images/trash.png') }}" height="24"></button>
-                                <a href="/" class="btn btn-primary">Return</a>
-                                <button class="btn btn-success">Save</button>
+                                <button class=" list-inline-item btn btn-danger " class="form-control" type="submit">Empty To Do List</button>
                             </form>
-                            @endforeach
+                                <a href="/" class=" list-inline-item btn btn-primary mx-0">Return</a>
+                                <button class="btn btn-success mx-0">Save</button>
                         </div>
                     </div>
                 </div>

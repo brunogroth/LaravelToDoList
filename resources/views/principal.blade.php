@@ -31,8 +31,8 @@
                         <h5 class="card-title">{{$list->title}}</h5>
                         <p class="card-text">{{$list->description}}</p>
                         <div class="text-end">
-                            <form style="display:inline" action="{{route('todo.show')}}" method="POST">
-                                    @csrf
+                            <form style="display:inline" action="{{route('todo.show', $list->id)}}" method="get">
+                                    
                                 <input type="hidden" name="id" value="{{$list->id}}">
                                 <button class="btn btn-primary px-3" type="submit">See List</button>
                             </form>

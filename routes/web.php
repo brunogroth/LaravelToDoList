@@ -17,8 +17,13 @@ Route::get('/', [App\Http\Controllers\TodoListController::class, 'index'])->name
 
 Route::get('create', [App\Http\Controllers\TodoListController::class, 'create'])->name('todo.create');
 
-Route::post('store', [App\Http\Controllers\TodoListController::class, 'store'])->name('todo.store');
+Route::post('list/store', [App\Http\Controllers\TodoListController::class, 'store'])->name('todo.store');
 
-Route::post('delete',  [App\Http\Controllers\TodoListController::class, 'delete'])->name('todo.delete');
+Route::post('list/delete',  [App\Http\Controllers\TodoListController::class, 'delete'])->name('todo.delete');
 
-Route::post('show',  [App\Http\Controllers\ItemController::class, 'show'])->name('todo.show');
+Route::get('/list/{id}',  [App\Http\Controllers\ItemController::class, 'show'])->name('todo.show');
+
+//Item
+Route::post('/item/store',  [App\Http\Controllers\ItemController::class, 'store'])->name('item.store');
+
+Route::post('/item/delete',  [App\Http\Controllers\ItemController::class, 'delete'])->name('item.delete');
