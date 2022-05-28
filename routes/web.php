@@ -21,4 +21,4 @@ Route::post('store', [App\Http\Controllers\TodoListController::class, 'store'])-
 
 Route::post('delete',  [App\Http\Controllers\TodoListController::class, 'delete'])->name('todo.delete');
 
-Route::post('show',  [App\Http\Controllers\TodoListController::class, 'show'])->name('todo.show');
+Route::post('show',  [App\Http\Controllers\ItemController::class, 'show'])->name('todo.show');

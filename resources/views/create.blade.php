@@ -8,7 +8,7 @@
         <!-- Styles -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="app.css">
-        
+        <!-- JavaScript Bundle with Popper -->
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -18,19 +18,13 @@
     <div class="min-h-screen sm:items-center py-4 sm:pt-0 background">
         <!-- Menu -->
         <nav>
+
             <ul class="px-3 nav bg-dark">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Lists</a>
-            <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">todo</a></li>
-                      <li><a class="dropdown-item" href="#">todo</a></li>
-            </ul>
-                  </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Create</a>
+                  <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
+                  <a class="nav-link" href="/create">Create</a>
                 </li>
             </ul>
         </nav>
@@ -73,5 +67,6 @@
             </div> 
         </div>
     </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

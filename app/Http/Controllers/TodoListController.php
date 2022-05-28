@@ -30,11 +30,4 @@ class TodoListController extends Controller
 
         return redirect()->back()->with('success', 'To do List sucessfully <strong> deleted!</strong>');  
     }
-
-    public function show(Request $request){   
-        $lists = DB::table('lists')->where('id', '=', $request->id)->get();     
-        $item = DB::table('item')->where('todo_list_id', '=', $request->id)->get();
-    
-    return view('show', compact('lists', 'item'));
-}
 }
